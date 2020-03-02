@@ -1,0 +1,13 @@
+{
+  mongoUrl: "mongodb://localhost:27017",
+  dbName: "pad",
+  collectionName: "pads",
+
+  saveInterval: 1, // In minutes
+
+  // The delay after which a pad can be unloaded from the memory
+  unloadDelay: 1,
+
+  // A password that allows access to all the pads
+  adminPassword: "jaimelesbites74"
+}

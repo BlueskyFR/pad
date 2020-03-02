@@ -1,0 +1,172 @@
+// Import Darkly's variables, then override them with mine,
+// then import Bootstrap and finally apply Darkly's patches
+@import "~bootswatch/dist/darkly/variables";
+@import "scss/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootswatch/dist/darkly/bootswatch";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  color: white;
+  background-color: $bg;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+#app {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-body {
+  text-align: left;
+
+  ul > li {
+    margin-bottom: 10px;
+  }
+}
+
+.primary {
+  color: $primary;
+}
+
+.special {
+  color: $special;
+}
+
+#logo {
+  background: linear-gradient(to left, #9551b8, #f43441);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+#version {
+  margin: 0;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+nav {
+  .input-group {
+    width: 300px;
+  }
+
+  .input-group input,
+  .btn {
+    height: calc(1.35em + 0.75rem + 2px);
+    font-size: 1.2rem;
+    line-height: 1.35;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  .btn:hover {
+    color: inherit;
+  }
+
+  .btn-accent {
+    color: white;
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  .inline-collapsed {
+    display: inline-flex;
+  }
+
+  #options-button {
+    transition: opacity 0.5s ease;
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    margin-left: 25px;
+
+    /*.navbar-toggler-icon {
+      color: white;
+    }*/
+  }
+
+  // Fix for the style forced by router-link
+  // through generate <a> tag
+  .router-link-patch {
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#pad-slug {
+  border: solid 1px $primary;
+  background-color: $bg;
+  color: white;
+}
+
+header {
+  margin: 0;
+  padding: 16px;
+  border-bottom: solid 1px $primary;
+}
+
+header a {
+  color: white;
+}
+
+footer {
+  margin: 0;
+  padding: 10px;
+  border-top: solid 1px $primary;
+
+  p {
+    margin: 2px;
+    padding: 0;
+  }
+}
+
+footer p a {
+  color: inherit;
+  text-decoration: none;
+  padding: 1px;
+  border-bottom: solid 1px white;
+  transition: all 0.4s ease;
+}
+
+footer p a:hover {
+  color: yellow;
+  text-decoration: none;
+  border-bottom: solid 1px yellow;
+}
+
+footer img {
+  width: 1em;
+  height: auto;
+}
