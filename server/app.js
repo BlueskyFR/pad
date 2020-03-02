@@ -6,6 +6,7 @@ const config = require("./config.json5");
 // It is possible to avoid using DEBUG=pad:* in launch args
 // to display debug messages, see official doc for details.
 let debug = require("debug")("pad:main");
+debug.log = console.log.bind(console);
 
 const server = require("http").createServer();
 const io = require("socket.io")(server, {
