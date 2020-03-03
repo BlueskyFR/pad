@@ -65,6 +65,7 @@ module.exports = class DBManager {
           $set: {
             type: pad.type,
             language: pad.language,
+            password: pad.password,
             data: pad.data
           }
         });
