@@ -92,7 +92,7 @@ padsNamespace.use((socket, next) => {
 // Default "/" namespace
 padsNamespace.on("connection", async socket => {
   let slug = socket.handshake.query.slug;
-  ({ isNewPad, isPasswordProtected, pad } = getPadInfo(slug));
+  let { isNewPad, isPasswordProtected, pad } = getPadInfo(slug);
 
   let init;
   if (isPasswordProtected) {
