@@ -8,6 +8,6 @@
   // The delay after which a pad can be unloaded from the memory
   unloadDelay: 10,
 
-  // A password that allows access to all the pads
-  adminPassword: "jaimelesbites74"
+  // A private key use to check Google Authenticator token
+  adminSecret: "3UKJHAOWDTT6OJRC"
 }

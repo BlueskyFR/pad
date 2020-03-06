@@ -12,8 +12,10 @@
   "dependencies": {
     "bootswatch": "^4.4.1",
     "debug": "^4.1.1",
+    "google_authenticator": "^2.0.0",
     "json5": "^2.1.1",
     "mongodb": "^3.5.4",
+    "qrcode": "^1.4.4",
     "socket.io": "^2.3.0",
     "supports-color": "^7.1.0"
   },

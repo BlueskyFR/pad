@@ -12,6 +12,9 @@ const server = require("http").createServer();
 const io = require("socket.io")(server, {
   path: "/api"
 });
+var GoogleAuth = require("google_authenticator").authenticator;
+
+var googleAuth = new GoogleAuth();
 
 let pads = {};
 
@@ -112,7 +115,7 @@ padsNamespace.on("connection", async socket => {
   if (isNewPad) allowPasswordSetOperations();
 
   socket.on("password", async password => {
-    let isAdminPassword = password === config.adminPassword;
+    let isAdminPassword = googleAuth.verifyCode(config.adminSecret, password);
     let response = {
       // Allow access if password is correct or is admin password
       isPasswordCorrect: pad.password === password || isAdminPassword
