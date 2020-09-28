@@ -24,7 +24,7 @@ module.exports = class DBManager {
   async _initDBConnection() {
     this.client = new MongoClient(config.mongoUrl, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     });
 
     try {
@@ -66,8 +66,8 @@ module.exports = class DBManager {
             type: pad.type,
             language: pad.language,
             password: pad.password,
-            data: pad.data
-          }
+            data: pad.data,
+          },
         });
 
       // Unload decayed pads
@@ -99,7 +99,7 @@ module.exports = class DBManager {
         password: pad.password,
         language: pad.language,
         isUnloaded: true,
-        data: null
+        data: null,
       };
     }
 

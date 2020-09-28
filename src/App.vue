@@ -78,12 +78,8 @@
                     <span class="special">créés</span> en cliquant sur "X pad créés" en haut à
                     droite.
                   </li>
-                  <li>
-                    L'icône (favicon) moche par défaut du site web a été changé.
-                  </li>
-                  <li>
-                    Côté client, Bootstrap a été mis à jour vers la dernière version (4.4.1).
-                  </li>
+                  <li>L'icône (favicon) moche par défaut du site web a été changé.</li>
+                  <li>Côté client, Bootstrap a été mis à jour vers la dernière version (4.4.1).</li>
                 </ul>
                 Un feedback ? Une idée ?
                 <a href="mailto:hugo.cartigny@gmail.com">Contacte-moi !</a>
@@ -102,9 +98,7 @@
         <div class="input-group">
           <input class="form-control" id="pad-slug" type="search" placeholder="Accéder au pad..." />
           <div class="input-group-append">
-            <button class="btn btn-accent my-2 my-sm-0" type="submit">
-              Go !
-            </button>
+            <button class="btn btn-accent my-2 my-sm-0" type="submit">Go !</button>
           </div>
         </div>
         <button
@@ -129,9 +123,7 @@
       <p>
         Made with
         <img src="https://twemoji.maxcdn.com/svg/2764.svg" alt="heart" /> by
-        <a href="https://github.com/BlueskyFR" target="_blank">
-          Hugo Cartigny (@BlueskyFR)
-        </a>
+        <a href="https://github.com/BlueskyFR" target="_blank"> Hugo Cartigny (@BlueskyFR) </a>
       </p>
     </footer>
   </div>

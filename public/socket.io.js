@@ -3,7 +3,7 @@
  * (c) 2014-2019 Guillermo Rauch
  * Released under the MIT License.
  */
-!(function(t, e) {
+!(function (t, e) {
   "object" == typeof exports && "object" == typeof module
     ? (module.exports = e())
     : "function" == typeof define && define.amd
@@ -11,8 +11,8 @@
     : "object" == typeof exports
     ? (exports.io = e())
     : (t.io = e());
-})(this, function() {
-  return (function(t) {
+})(this, function () {
+  return (function (t) {
     function e(r) {
       if (n[r]) return n[r].exports;
       var o = (n[r] = { exports: {}, id: r, loaded: !1 });
@@ -21,7 +21,7 @@
     var n = {};
     return (e.m = t), (e.c = n), (e.p = ""), e(0);
   })([
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t, e) {
         "object" == typeof t && ((e = t), (t = void 0)), (e = e || {});
         var n,
@@ -47,7 +47,7 @@
       var c = (e.managers = {});
       (e.protocol = i.protocol), (e.connect = r), (e.Manager = n(15)), (e.Socket = n(39));
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t, e) {
         var n = t;
         (e = e || ("undefined" != typeof location && location)),
@@ -76,7 +76,7 @@
         i = n(3)("socket.io-client:url");
       t.exports = r;
     },
-    function(t, e) {
+    function (t, e) {
       var n = /^(?:(?![^:@]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/,
         r = [
           "source",
@@ -92,9 +92,9 @@
           "directory",
           "file",
           "query",
-          "anchor"
+          "anchor",
         ];
-      t.exports = function(t) {
+      t.exports = function (t) {
         var e = t,
           o = t.indexOf("["),
           i = t.indexOf("]");
@@ -107,17 +107,14 @@
             i != -1 &&
             ((a.source = e),
             (a.host = a.host.substring(1, a.host.length - 1).replace(/;/g, ":")),
-            (a.authority = a.authority
-              .replace("[", "")
-              .replace("]", "")
-              .replace(/;/g, ":")),
+            (a.authority = a.authority.replace("[", "").replace("]", "").replace(/;/g, ":")),
             (a.ipv6uri = !0)),
           a
         );
       };
     },
-    function(t, e, n) {
-      (function(r) {
+    function (t, e, n) {
+      (function (r) {
         "use strict";
         function o() {
           return (
@@ -161,7 +158,7 @@
             e.splice(1, 0, n, "color: inherit");
             var r = 0,
               o = 0;
-            e[0].replace(/%[a-zA-Z%]/g, function(t) {
+            e[0].replace(/%[a-zA-Z%]/g, function (t) {
               "%%" !== t && (r++, "%c" === t && (o = r));
             }),
               e.splice(o, 0, n);
@@ -194,10 +191,10 @@
         }
         var p =
           "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
-            ? function(t) {
+            ? function (t) {
                 return typeof t;
               }
-            : function(t) {
+            : function (t) {
                 return t &&
                   "function" == typeof Symbol &&
                   t.constructor === Symbol &&
@@ -287,11 +284,11 @@
             "#FF9900",
             "#FF9933",
             "#FFCC00",
-            "#FFCC33"
+            "#FFCC33",
           ]),
           (t.exports = n(5)(e));
         var h = t.exports.formatters;
-        h.j = function(t) {
+        h.j = function (t) {
           try {
             return JSON.stringify(t);
           } catch (e) {
@@ -300,7 +297,7 @@
         };
       }.call(e, n(4)));
     },
-    function(t, e) {
+    function (t, e) {
       function n() {
         throw new Error("setTimeout has not been defined");
       }
@@ -354,7 +351,7 @@
       var p,
         h,
         f = (t.exports = {});
-      !(function() {
+      !(function () {
         try {
           p = "function" == typeof setTimeout ? setTimeout : n;
         } catch (t) {
@@ -370,13 +367,13 @@
         d = [],
         y = !1,
         m = -1;
-      (f.nextTick = function(t) {
+      (f.nextTick = function (t) {
         var e = new Array(arguments.length - 1);
         if (arguments.length > 1)
           for (var n = 1; n < arguments.length; n++) e[n - 1] = arguments[n];
         d.push(new c(t, e)), 1 !== d.length || y || o(a);
       }),
-        (c.prototype.run = function() {
+        (c.prototype.run = function () {
           this.fun.apply(null, this.array);
         }),
         (f.title = "browser"),
@@ -394,23 +391,23 @@
         (f.emit = u),
         (f.prependListener = u),
         (f.prependOnceListener = u),
-        (f.listeners = function(t) {
+        (f.listeners = function (t) {
           return [];
         }),
-        (f.binding = function(t) {
+        (f.binding = function (t) {
           throw new Error("process.binding is not supported");
         }),
-        (f.cwd = function() {
+        (f.cwd = function () {
           return "/";
         }),
-        (f.chdir = function(t) {
+        (f.chdir = function (t) {
           throw new Error("process.chdir is not supported");
         }),
-        (f.umask = function() {
+        (f.umask = function () {
           return 0;
         });
     },
-    function(t, e, n) {
+    function (t, e, n) {
       "use strict";
       function r(t) {
         if (Array.isArray(t)) {
@@ -438,7 +435,7 @@
                 (e[0] = o.coerce(e[0])),
                 "string" != typeof e[0] && e.unshift("%O");
               var u = 0;
-              (e[0] = e[0].replace(/%([a-zA-Z%])/g, function(t, n) {
+              (e[0] = e[0].replace(/%([a-zA-Z%])/g, function (t, n) {
                 if ("%%" === t) return t;
                 u++;
                 var r = o.formatters[n];
@@ -495,7 +492,7 @@
             .concat(
               r(o.names.map(p)),
               r(
-                o.skips.map(p).map(function(t) {
+                o.skips.map(p).map(function (t) {
                   return "-" + t;
                 })
               )
@@ -528,7 +525,7 @@
           (o.enable = a),
           (o.enabled = u),
           (o.humanize = n(6)),
-          Object.keys(t).forEach(function(e) {
+          Object.keys(t).forEach(function (e) {
             o[e] = t[e];
           }),
           (o.instances = []),
@@ -542,7 +539,7 @@
       }
       t.exports = o;
     },
-    function(t, e) {
+    function (t, e) {
       function n(t) {
         if (((t = String(t)), !(t.length > 100))) {
           var e = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(
@@ -630,7 +627,7 @@
         u = 24 * c,
         p = 7 * u,
         h = 365.25 * u;
-      t.exports = function(t, e) {
+      t.exports = function (t, e) {
         e = e || {};
         var i = typeof t;
         if ("string" === i && t.length > 0) return n(t);
@@ -640,7 +637,7 @@
         );
       };
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r() {}
       function o(t) {
         var n = "" + t.type;
@@ -737,7 +734,7 @@
           "ACK",
           "ERROR",
           "BINARY_EVENT",
-          "BINARY_ACK"
+          "BINARY_ACK",
         ]),
         (e.CONNECT = 0),
         (e.DISCONNECT = 1),
@@ -749,7 +746,7 @@
         (e.Encoder = r),
         (e.Decoder = a);
       var g = e.ERROR + '"encode error"';
-      (r.prototype.encode = function(t, n) {
+      (r.prototype.encode = function (t, n) {
         if ((f("encoding packet %j", t), e.BINARY_EVENT === t.type || e.BINARY_ACK === t.type))
           s(t, n);
         else {
@@ -758,7 +755,7 @@
         }
       }),
         l(a.prototype),
-        (a.prototype.add = function(t) {
+        (a.prototype.add = function (t) {
           var n;
           if ("string" == typeof t)
             (n = c(t)),
@@ -774,22 +771,22 @@
               n && ((this.reconstructor = null), this.emit("decoded", n));
           }
         }),
-        (a.prototype.destroy = function() {
+        (a.prototype.destroy = function () {
           this.reconstructor && this.reconstructor.finishedReconstruction();
         }),
-        (p.prototype.takeBinaryData = function(t) {
+        (p.prototype.takeBinaryData = function (t) {
           if ((this.buffers.push(t), this.buffers.length === this.reconPack.attachments)) {
             var e = d.reconstructPacket(this.reconPack, this.buffers);
             return this.finishedReconstruction(), e;
           }
           return null;
         }),
-        (p.prototype.finishedReconstruction = function() {
+        (p.prototype.finishedReconstruction = function () {
           (this.reconPack = null), (this.buffers = []);
         });
     },
-    function(t, e, n) {
-      (function(r) {
+    function (t, e, n) {
+      (function (r) {
         "use strict";
         function o() {
           return (
@@ -834,7 +831,7 @@
             t.splice(1, 0, r, "color: inherit");
             var o = 0,
               i = 0;
-            t[0].replace(/%[a-zA-Z%]/g, function(t) {
+            t[0].replace(/%[a-zA-Z%]/g, function (t) {
               "%%" !== t && (o++, "%c" === t && (i = o));
             }),
               t.splice(i, 0, r);
@@ -866,10 +863,10 @@
         }
         var p =
           "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
-            ? function(t) {
+            ? function (t) {
                 return typeof t;
               }
-            : function(t) {
+            : function (t) {
                 return t &&
                   "function" == typeof Symbol &&
                   t.constructor === Symbol &&
@@ -963,9 +960,9 @@
             "#FF9900",
             "#FF9933",
             "#FFCC00",
-            "#FFCC33"
+            "#FFCC33",
           ]),
-          (e.formatters.j = function(t) {
+          (e.formatters.j = function (t) {
             try {
               return JSON.stringify(t);
             } catch (e) {
@@ -975,7 +972,7 @@
           e.enable(c());
       }.call(e, n(4)));
     },
-    function(t, e, n) {
+    function (t, e, n) {
       "use strict";
       function r(t) {
         var n,
@@ -993,7 +990,7 @@
             for (var s = new Array(arguments.length), a = 0; a < s.length; a++) s[a] = arguments[a];
             (s[0] = e.coerce(s[0])), "string" != typeof s[0] && s.unshift("%O");
             var c = 0;
-            (s[0] = s[0].replace(/%([a-zA-Z%])/g, function(n, r) {
+            (s[0] = s[0].replace(/%([a-zA-Z%])/g, function (n, r) {
               if ("%%" === n) return n;
               c++;
               var o = e.formatters[r];
@@ -1064,7 +1061,7 @@
         (e.skips = []),
         (e.formatters = {});
     },
-    function(t, e) {
+    function (t, e) {
       function n(t) {
         if (((t = String(t)), !(t.length > 100))) {
           var e = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(
@@ -1139,7 +1136,7 @@
         c = 60 * a,
         u = 24 * c,
         p = 365.25 * u;
-      t.exports = function(t, e) {
+      t.exports = function (t, e) {
         e = e || {};
         var i = typeof t;
         if ("string" === i && t.length > 0) return n(t);
@@ -1149,7 +1146,7 @@
         );
       };
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t) {
         if (t) return o(t);
       }
@@ -1158,20 +1155,20 @@
         return t;
       }
       (t.exports = r),
-        (r.prototype.on = r.prototype.addEventListener = function(t, e) {
+        (r.prototype.on = r.prototype.addEventListener = function (t, e) {
           return (
             (this._callbacks = this._callbacks || {}),
             (this._callbacks["$" + t] = this._callbacks["$" + t] || []).push(e),
             this
           );
         }),
-        (r.prototype.once = function(t, e) {
+        (r.prototype.once = function (t, e) {
           function n() {
             this.off(t, n), e.apply(this, arguments);
           }
           return (n.fn = e), this.on(t, n), this;
         }),
-        (r.prototype.off = r.prototype.removeListener = r.prototype.removeAllListeners = r.prototype.removeEventListener = function(
+        (r.prototype.off = r.prototype.removeListener = r.prototype.removeAllListeners = r.prototype.removeEventListener = function (
           t,
           e
         ) {
@@ -1187,7 +1184,7 @@
             }
           return this;
         }),
-        (r.prototype.emit = function(t) {
+        (r.prototype.emit = function (t) {
           this._callbacks = this._callbacks || {};
           var e = [].slice.call(arguments, 1),
             n = this._callbacks["$" + t];
@@ -1197,14 +1194,14 @@
           }
           return this;
         }),
-        (r.prototype.listeners = function(t) {
+        (r.prototype.listeners = function (t) {
           return (this._callbacks = this._callbacks || {}), this._callbacks["$" + t] || [];
         }),
-        (r.prototype.hasListeners = function(t) {
+        (r.prototype.hasListeners = function (t) {
           return !!this.listeners(t).length;
         });
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t, e) {
         if (!t) return t;
         if (s(t)) {
@@ -1238,22 +1235,22 @@
         u =
           "function" == typeof File ||
           ("undefined" != typeof File && "[object FileConstructor]" === a.call(File));
-      (e.deconstructPacket = function(t) {
+      (e.deconstructPacket = function (t) {
         var e = [],
           n = t.data,
           o = t;
         return (o.data = r(n, e)), (o.attachments = e.length), { packet: o, buffers: e };
       }),
-        (e.reconstructPacket = function(t, e) {
+        (e.reconstructPacket = function (t, e) {
           return (t.data = o(t.data, e)), (t.attachments = void 0), t;
         }),
-        (e.removeBlobs = function(t, e) {
+        (e.removeBlobs = function (t, e) {
           function n(t, a, p) {
             if (!t) return t;
             if ((c && t instanceof Blob) || (u && t instanceof File)) {
               r++;
               var h = new FileReader();
-              (h.onload = function() {
+              (h.onload = function () {
                 p ? (p[a] = this.result) : (o = this.result), --r || e(o);
               }),
                 h.readAsArrayBuffer(t);
@@ -1265,28 +1262,28 @@
           n(o), r || e(o);
         });
     },
-    function(t, e) {
+    function (t, e) {
       var n = {}.toString;
       t.exports =
         Array.isArray ||
-        function(t) {
+        function (t) {
           return "[object Array]" == n.call(t);
         };
     },
-    function(t, e) {
+    function (t, e) {
       function n(t) {
         return (r && Buffer.isBuffer(t)) || (o && (t instanceof ArrayBuffer || i(t)));
       }
       t.exports = n;
       var r = "function" == typeof Buffer && "function" == typeof Buffer.isBuffer,
         o = "function" == typeof ArrayBuffer,
-        i = function(t) {
+        i = function (t) {
           return "function" == typeof ArrayBuffer.isView
             ? ArrayBuffer.isView(t)
             : t.buffer instanceof ArrayBuffer;
         };
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t, e) {
         if (!(this instanceof r)) return new r(t, e);
         t && "object" == typeof t && ((e = t), (t = void 0)),
@@ -1303,7 +1300,7 @@
           (this.backoff = new f({
             min: this.reconnectionDelay(),
             max: this.reconnectionDelayMax(),
-            jitter: this.randomizationFactor()
+            jitter: this.randomizationFactor(),
           })),
           this.timeout(null == e.timeout ? 2e4 : e.timeout),
           (this.readyState = "closed"),
@@ -1329,60 +1326,60 @@
         f = n(43),
         l = Object.prototype.hasOwnProperty;
       (t.exports = r),
-        (r.prototype.emitAll = function() {
+        (r.prototype.emitAll = function () {
           this.emit.apply(this, arguments);
           for (var t in this.nsps)
             l.call(this.nsps, t) && this.nsps[t].emit.apply(this.nsps[t], arguments);
         }),
-        (r.prototype.updateSocketIds = function() {
+        (r.prototype.updateSocketIds = function () {
           for (var t in this.nsps) l.call(this.nsps, t) && (this.nsps[t].id = this.generateId(t));
         }),
-        (r.prototype.generateId = function(t) {
+        (r.prototype.generateId = function (t) {
           return ("/" === t ? "" : t + "#") + this.engine.id;
         }),
         s(r.prototype),
-        (r.prototype.reconnection = function(t) {
+        (r.prototype.reconnection = function (t) {
           return arguments.length ? ((this._reconnection = !!t), this) : this._reconnection;
         }),
-        (r.prototype.reconnectionAttempts = function(t) {
+        (r.prototype.reconnectionAttempts = function (t) {
           return arguments.length
             ? ((this._reconnectionAttempts = t), this)
             : this._reconnectionAttempts;
         }),
-        (r.prototype.reconnectionDelay = function(t) {
+        (r.prototype.reconnectionDelay = function (t) {
           return arguments.length
             ? ((this._reconnectionDelay = t), this.backoff && this.backoff.setMin(t), this)
             : this._reconnectionDelay;
         }),
-        (r.prototype.randomizationFactor = function(t) {
+        (r.prototype.randomizationFactor = function (t) {
           return arguments.length
             ? ((this._randomizationFactor = t), this.backoff && this.backoff.setJitter(t), this)
             : this._randomizationFactor;
         }),
-        (r.prototype.reconnectionDelayMax = function(t) {
+        (r.prototype.reconnectionDelayMax = function (t) {
           return arguments.length
             ? ((this._reconnectionDelayMax = t), this.backoff && this.backoff.setMax(t), this)
             : this._reconnectionDelayMax;
         }),
-        (r.prototype.timeout = function(t) {
+        (r.prototype.timeout = function (t) {
           return arguments.length ? ((this._timeout = t), this) : this._timeout;
         }),
-        (r.prototype.maybeReconnectOnOpen = function() {
+        (r.prototype.maybeReconnectOnOpen = function () {
           !this.reconnecting &&
             this._reconnection &&
             0 === this.backoff.attempts &&
             this.reconnect();
         }),
-        (r.prototype.open = r.prototype.connect = function(t, e) {
+        (r.prototype.open = r.prototype.connect = function (t, e) {
           if ((p("readyState %s", this.readyState), ~this.readyState.indexOf("open"))) return this;
           p("opening %s", this.uri), (this.engine = o(this.uri, this.opts));
           var n = this.engine,
             r = this;
           (this.readyState = "opening"), (this.skipReconnect = !1);
-          var i = c(n, "open", function() {
+          var i = c(n, "open", function () {
               r.onopen(), t && t();
             }),
-            s = c(n, "error", function(e) {
+            s = c(n, "error", function (e) {
               if (
                 (p("connect_error"),
                 r.cleanup(),
@@ -1397,7 +1394,7 @@
           if (!1 !== this._timeout) {
             var a = this._timeout;
             p("connect attempt will timeout after %d", a);
-            var u = setTimeout(function() {
+            var u = setTimeout(function () {
               p("connect attempt timed out after %d", a),
                 i.destroy(),
                 n.close(),
@@ -1405,14 +1402,14 @@
                 r.emitAll("connect_timeout", a);
             }, a);
             this.subs.push({
-              destroy: function() {
+              destroy: function () {
                 clearTimeout(u);
-              }
+              },
             });
           }
           return this.subs.push(i), this.subs.push(s), this;
         }),
-        (r.prototype.onopen = function() {
+        (r.prototype.onopen = function () {
           p("open"), this.cleanup(), (this.readyState = "open"), this.emit("open");
           var t = this.engine;
           this.subs.push(c(t, "data", u(this, "ondata"))),
@@ -1422,22 +1419,22 @@
             this.subs.push(c(t, "close", u(this, "onclose"))),
             this.subs.push(c(this.decoder, "decoded", u(this, "ondecoded")));
         }),
-        (r.prototype.onping = function() {
+        (r.prototype.onping = function () {
           (this.lastPing = new Date()), this.emitAll("ping");
         }),
-        (r.prototype.onpong = function() {
+        (r.prototype.onpong = function () {
           this.emitAll("pong", new Date() - this.lastPing);
         }),
-        (r.prototype.ondata = function(t) {
+        (r.prototype.ondata = function (t) {
           this.decoder.add(t);
         }),
-        (r.prototype.ondecoded = function(t) {
+        (r.prototype.ondecoded = function (t) {
           this.emit("packet", t);
         }),
-        (r.prototype.onerror = function(t) {
+        (r.prototype.onerror = function (t) {
           p("error", t), this.emitAll("error", t);
         }),
-        (r.prototype.socket = function(t, e) {
+        (r.prototype.socket = function (t, e) {
           function n() {
             ~h(o.connecting, r) || o.connecting.push(r);
           }
@@ -1446,36 +1443,36 @@
             (r = new i(this, t, e)), (this.nsps[t] = r);
             var o = this;
             r.on("connecting", n),
-              r.on("connect", function() {
+              r.on("connect", function () {
                 r.id = o.generateId(t);
               }),
               this.autoConnect && n();
           }
           return r;
         }),
-        (r.prototype.destroy = function(t) {
+        (r.prototype.destroy = function (t) {
           var e = h(this.connecting, t);
           ~e && this.connecting.splice(e, 1), this.connecting.length || this.close();
         }),
-        (r.prototype.packet = function(t) {
+        (r.prototype.packet = function (t) {
           p("writing packet %j", t);
           var e = this;
           t.query && 0 === t.type && (t.nsp += "?" + t.query),
             e.encoding
               ? e.packetBuffer.push(t)
               : ((e.encoding = !0),
-                this.encoder.encode(t, function(n) {
+                this.encoder.encode(t, function (n) {
                   for (var r = 0; r < n.length; r++) e.engine.write(n[r], t.options);
                   (e.encoding = !1), e.processPacketQueue();
                 }));
         }),
-        (r.prototype.processPacketQueue = function() {
+        (r.prototype.processPacketQueue = function () {
           if (this.packetBuffer.length > 0 && !this.encoding) {
             var t = this.packetBuffer.shift();
             this.packet(t);
           }
         }),
-        (r.prototype.cleanup = function() {
+        (r.prototype.cleanup = function () {
           p("cleanup");
           for (var t = this.subs.length, e = 0; e < t; e++) {
             var n = this.subs.shift();
@@ -1486,7 +1483,7 @@
             (this.lastPing = null),
             this.decoder.destroy();
         }),
-        (r.prototype.close = r.prototype.disconnect = function() {
+        (r.prototype.close = r.prototype.disconnect = function () {
           p("disconnect"),
             (this.skipReconnect = !0),
             (this.reconnecting = !1),
@@ -1495,7 +1492,7 @@
             (this.readyState = "closed"),
             this.engine && this.engine.close();
         }),
-        (r.prototype.onclose = function(t) {
+        (r.prototype.onclose = function (t) {
           p("onclose"),
             this.cleanup(),
             this.backoff.reset(),
@@ -1503,7 +1500,7 @@
             this.emit("close", t),
             this._reconnection && !this.skipReconnect && this.reconnect();
         }),
-        (r.prototype.reconnect = function() {
+        (r.prototype.reconnect = function () {
           if (this.reconnecting || this.skipReconnect) return this;
           var t = this;
           if (this.backoff.attempts >= this._reconnectionAttempts)
@@ -1514,13 +1511,13 @@
           else {
             var e = this.backoff.duration();
             p("will wait %dms before reconnect attempt", e), (this.reconnecting = !0);
-            var n = setTimeout(function() {
+            var n = setTimeout(function () {
               t.skipReconnect ||
                 (p("attempting reconnect"),
                 t.emitAll("reconnect_attempt", t.backoff.attempts),
                 t.emitAll("reconnecting", t.backoff.attempts),
                 t.skipReconnect ||
-                  t.open(function(e) {
+                  t.open(function (e) {
                     e
                       ? (p("reconnect attempt error"),
                         (t.reconnecting = !1),
@@ -1530,13 +1527,13 @@
                   }));
             }, e);
             this.subs.push({
-              destroy: function() {
+              destroy: function () {
                 clearTimeout(n);
-              }
+              },
             });
           }
         }),
-        (r.prototype.onreconnect = function() {
+        (r.prototype.onreconnect = function () {
           var t = this.backoff.attempts;
           (this.reconnecting = !1),
             this.backoff.reset(),
@@ -1544,10 +1541,10 @@
             this.emitAll("reconnect", t);
         });
     },
-    function(t, e, n) {
+    function (t, e, n) {
       (t.exports = n(17)), (t.exports.parser = n(24));
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t, e) {
         return this instanceof r
           ? ((e = e || {}),
@@ -1645,7 +1642,7 @@
         (r.Transport = n(23)),
         (r.transports = n(18)),
         (r.parser = n(24)),
-        (r.prototype.createTransport = function(t) {
+        (r.prototype.createTransport = function (t) {
           a('creating transport "%s"', t);
           var e = o(this.query);
           (e.EIO = u.protocol), (e.transport = t);
@@ -1680,11 +1677,11 @@
             localAddress: n.localAddress || this.localAddress,
             requestTimeout: n.requestTimeout || this.requestTimeout,
             protocols: n.protocols || void 0,
-            isReactNative: this.isReactNative
+            isReactNative: this.isReactNative,
           });
           return r;
         }),
-        (r.prototype.open = function() {
+        (r.prototype.open = function () {
           var t;
           if (
             this.rememberUpgrade &&
@@ -1695,7 +1692,7 @@
           else {
             if (0 === this.transports.length) {
               var e = this;
-              return void setTimeout(function() {
+              return void setTimeout(function () {
                 e.emit("error", "No transports available");
               }, 0);
             }
@@ -1709,7 +1706,7 @@
           }
           t.open(), this.setTransport(t);
         }),
-        (r.prototype.setTransport = function(t) {
+        (r.prototype.setTransport = function (t) {
           a("setting transport %s", t.name);
           var e = this;
           this.transport &&
@@ -1717,20 +1714,20 @@
             this.transport.removeAllListeners()),
             (this.transport = t),
             t
-              .on("drain", function() {
+              .on("drain", function () {
                 e.onDrain();
               })
-              .on("packet", function(t) {
+              .on("packet", function (t) {
                 e.onPacket(t);
               })
-              .on("error", function(t) {
+              .on("error", function (t) {
                 e.onError(t);
               })
-              .on("close", function() {
+              .on("close", function () {
                 e.onClose("transport close");
               });
         }),
-        (r.prototype.probe = function(t) {
+        (r.prototype.probe = function (t) {
           function e() {
             if (f.onlyBinaryUpgrades) {
               var e = !this.supportsBinary && f.transport.supportsBinary;
@@ -1739,7 +1736,7 @@
             h ||
               (a('probe transport "%s" opened', t),
               p.send([{ type: "ping", data: "probe" }]),
-              p.once("packet", function(e) {
+              p.once("packet", function (e) {
                 if (!h)
                   if ("pong" === e.type && "probe" === e.data) {
                     if (
@@ -1751,7 +1748,7 @@
                       return;
                     (r.priorWebsocketSuccess = "websocket" === p.name),
                       a('pausing current transport "%s"', f.transport.name),
-                      f.transport.pause(function() {
+                      f.transport.pause(function () {
                         h ||
                           ("closed" !== f.readyState &&
                             (a("changing transport and sending upgrade packet"),
@@ -1808,7 +1805,7 @@
             this.once("upgrading", c),
             p.open();
         }),
-        (r.prototype.onOpen = function() {
+        (r.prototype.onOpen = function () {
           if (
             (a("socket open"),
             (this.readyState = "open"),
@@ -1821,7 +1818,7 @@
             for (var t = 0, e = this.upgrades.length; t < e; t++) this.probe(this.upgrades[t]);
           }
         }),
-        (r.prototype.onPacket = function(t) {
+        (r.prototype.onPacket = function (t) {
           if (
             "opening" === this.readyState ||
             "open" === this.readyState ||
@@ -1848,7 +1845,7 @@
             }
           else a('packet received with socket readyState "%s"', this.readyState);
         }),
-        (r.prototype.onHandshake = function(t) {
+        (r.prototype.onHandshake = function (t) {
           this.emit("handshake", t),
             (this.id = t.sid),
             (this.transport.query.sid = t.sid),
@@ -1861,34 +1858,34 @@
               this.removeListener("heartbeat", this.onHeartbeat),
               this.on("heartbeat", this.onHeartbeat));
         }),
-        (r.prototype.onHeartbeat = function(t) {
+        (r.prototype.onHeartbeat = function (t) {
           clearTimeout(this.pingTimeoutTimer);
           var e = this;
-          e.pingTimeoutTimer = setTimeout(function() {
+          e.pingTimeoutTimer = setTimeout(function () {
             "closed" !== e.readyState && e.onClose("ping timeout");
           }, t || e.pingInterval + e.pingTimeout);
         }),
-        (r.prototype.setPing = function() {
+        (r.prototype.setPing = function () {
           var t = this;
           clearTimeout(t.pingIntervalTimer),
-            (t.pingIntervalTimer = setTimeout(function() {
+            (t.pingIntervalTimer = setTimeout(function () {
               a("writing ping packet - expecting pong within %sms", t.pingTimeout),
                 t.ping(),
                 t.onHeartbeat(t.pingTimeout);
             }, t.pingInterval));
         }),
-        (r.prototype.ping = function() {
+        (r.prototype.ping = function () {
           var t = this;
-          this.sendPacket("ping", function() {
+          this.sendPacket("ping", function () {
             t.emit("ping");
           });
         }),
-        (r.prototype.onDrain = function() {
+        (r.prototype.onDrain = function () {
           this.writeBuffer.splice(0, this.prevBufferLen),
             (this.prevBufferLen = 0),
             0 === this.writeBuffer.length ? this.emit("drain") : this.flush();
         }),
-        (r.prototype.flush = function() {
+        (r.prototype.flush = function () {
           "closed" !== this.readyState &&
             this.transport.writable &&
             !this.upgrading &&
@@ -1898,10 +1895,10 @@
             (this.prevBufferLen = this.writeBuffer.length),
             this.emit("flush"));
         }),
-        (r.prototype.write = r.prototype.send = function(t, e, n) {
+        (r.prototype.write = r.prototype.send = function (t, e, n) {
           return this.sendPacket("message", t, e, n), this;
         }),
-        (r.prototype.sendPacket = function(t, e, n, r) {
+        (r.prototype.sendPacket = function (t, e, n, r) {
           if (
             ("function" == typeof e && ((r = e), (e = void 0)),
             "function" == typeof n && ((r = n), (n = null)),
@@ -1915,7 +1912,7 @@
               this.flush();
           }
         }),
-        (r.prototype.close = function() {
+        (r.prototype.close = function () {
           function t() {
             r.onClose("forced close"),
               a("socket closing - telling transport to close"),
@@ -1931,7 +1928,7 @@
             this.readyState = "closing";
             var r = this;
             this.writeBuffer.length
-              ? this.once("drain", function() {
+              ? this.once("drain", function () {
                   this.upgrading ? n() : t();
                 })
               : this.upgrading
@@ -1940,13 +1937,13 @@
           }
           return this;
         }),
-        (r.prototype.onError = function(t) {
+        (r.prototype.onError = function (t) {
           a("socket error %j", t),
             (r.priorWebsocketSuccess = !1),
             this.emit("error", t),
             this.onClose("transport error", t);
         }),
-        (r.prototype.onClose = function(t, e) {
+        (r.prototype.onClose = function (t, e) {
           if (
             "opening" === this.readyState ||
             "open" === this.readyState ||
@@ -1966,13 +1963,13 @@
               (n.prevBufferLen = 0);
           }
         }),
-        (r.prototype.filterUpgrades = function(t) {
+        (r.prototype.filterUpgrades = function (t) {
           for (var e = [], n = 0, r = t.length; n < r; n++)
             ~c(this.transports, t[n]) && e.push(t[n]);
           return e;
         });
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t) {
         var e,
           n = !1,
@@ -1996,9 +1993,9 @@
         a = n(36);
       (e.polling = r), (e.websocket = a);
     },
-    function(t, e, n) {
+    function (t, e, n) {
       var r = n(20);
-      t.exports = function(t) {
+      t.exports = function (t) {
         var e = t.xdomain,
           n = t.xscheme,
           o = t.enablesXDR;
@@ -2014,7 +2011,7 @@
           } catch (i) {}
       };
     },
-    function(t, e) {
+    function (t, e) {
       try {
         t.exports =
           "undefined" != typeof XMLHttpRequest && "withCredentials" in new XMLHttpRequest();
@@ -2022,7 +2019,7 @@
         t.exports = !1;
       }
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r() {}
       function o(t) {
         if (
@@ -2075,7 +2072,7 @@
         (t.exports.Request = i),
         p(o, c),
         (o.prototype.supportsBinary = !0),
-        (o.prototype.request = function(t) {
+        (o.prototype.request = function (t) {
           return (
             (t = t || {}),
             (t.uri = this.uri()),
@@ -2097,35 +2094,35 @@
             new i(t)
           );
         }),
-        (o.prototype.doWrite = function(t, e) {
+        (o.prototype.doWrite = function (t, e) {
           var n = "string" != typeof t && void 0 !== t,
             r = this.request({ method: "POST", data: t, isBinary: n }),
             o = this;
           r.on("success", e),
-            r.on("error", function(t) {
+            r.on("error", function (t) {
               o.onError("xhr post error", t);
             }),
             (this.sendXhr = r);
         }),
-        (o.prototype.doPoll = function() {
+        (o.prototype.doPoll = function () {
           h("xhr poll");
           var t = this.request(),
             e = this;
-          t.on("data", function(t) {
+          t.on("data", function (t) {
             e.onData(t);
           }),
-            t.on("error", function(t) {
+            t.on("error", function (t) {
               e.onError("xhr poll error", t);
             }),
             (this.pollXhr = t);
         }),
         u(i.prototype),
-        (i.prototype.create = function() {
+        (i.prototype.create = function () {
           var t = {
             agent: this.agent,
             xdomain: this.xd,
             xscheme: this.xs,
-            enablesXDR: this.enablesXDR
+            enablesXDR: this.enablesXDR,
           };
           (t.pfx = this.pfx),
             (t.key = this.key),
@@ -2158,13 +2155,13 @@
             "withCredentials" in e && (e.withCredentials = this.withCredentials),
               this.requestTimeout && (e.timeout = this.requestTimeout),
               this.hasXDR()
-                ? ((e.onload = function() {
+                ? ((e.onload = function () {
                     n.onLoad();
                   }),
-                  (e.onerror = function() {
+                  (e.onerror = function () {
                     n.onError(e.responseText);
                   }))
-                : (e.onreadystatechange = function() {
+                : (e.onreadystatechange = function () {
                     if (2 === e.readyState)
                       try {
                         var t = e.getResponseHeader("Content-Type");
@@ -2175,30 +2172,30 @@
                     4 === e.readyState &&
                       (200 === e.status || 1223 === e.status
                         ? n.onLoad()
-                        : setTimeout(function() {
+                        : setTimeout(function () {
                             n.onError("number" == typeof e.status ? e.status : 0);
                           }, 0));
                   }),
               h("xhr data %s", this.data),
               e.send(this.data);
           } catch (o) {
-            return void setTimeout(function() {
+            return void setTimeout(function () {
               n.onError(o);
             }, 0);
           }
           "undefined" != typeof document &&
             ((this.index = i.requestsCount++), (i.requests[this.index] = this));
         }),
-        (i.prototype.onSuccess = function() {
+        (i.prototype.onSuccess = function () {
           this.emit("success"), this.cleanup();
         }),
-        (i.prototype.onData = function(t) {
+        (i.prototype.onData = function (t) {
           this.emit("data", t), this.onSuccess();
         }),
-        (i.prototype.onError = function(t) {
+        (i.prototype.onError = function (t) {
           this.emit("error", t), this.cleanup(!0);
         }),
-        (i.prototype.cleanup = function(t) {
+        (i.prototype.cleanup = function (t) {
           if ("undefined" != typeof this.xhr && null !== this.xhr) {
             if (
               (this.hasXDR()
@@ -2212,7 +2209,7 @@
             "undefined" != typeof document && delete i.requests[this.index], (this.xhr = null);
           }
         }),
-        (i.prototype.onLoad = function() {
+        (i.prototype.onLoad = function () {
           var t;
           try {
             var e;
@@ -2228,10 +2225,10 @@
           }
           null != t && this.onData(t);
         }),
-        (i.prototype.hasXDR = function() {
+        (i.prototype.hasXDR = function () {
           return "undefined" != typeof XDomainRequest && !this.xs && this.enablesXDR;
         }),
-        (i.prototype.abort = function() {
+        (i.prototype.abort = function () {
           this.cleanup();
         }),
         (i.requestsCount = 0),
@@ -2244,7 +2241,7 @@
           addEventListener(f, s, !1);
         }
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t) {
         var e = t && t.forceBase64;
         (p && !e) || (this.supportsBinary = !1), o.call(this, t);
@@ -2256,17 +2253,17 @@
         c = n(34),
         u = n(3)("engine.io-client:polling");
       t.exports = r;
-      var p = (function() {
+      var p = (function () {
         var t = n(19),
           e = new t({ xdomain: !1 });
         return null != e.responseType;
       })();
       a(r, o),
         (r.prototype.name = "polling"),
-        (r.prototype.doOpen = function() {
+        (r.prototype.doOpen = function () {
           this.poll();
         }),
-        (r.prototype.pause = function(t) {
+        (r.prototype.pause = function (t) {
           function e() {
             u("paused"), (n.readyState = "paused"), t();
           }
@@ -2276,24 +2273,24 @@
             this.polling &&
               (u("we are currently polling - waiting to pause"),
               r++,
-              this.once("pollComplete", function() {
+              this.once("pollComplete", function () {
                 u("pre-pause polling complete"), --r || e();
               })),
               this.writable ||
                 (u("we are currently writing - waiting to pause"),
                 r++,
-                this.once("drain", function() {
+                this.once("drain", function () {
                   u("pre-pause writing complete"), --r || e();
                 }));
           } else e();
         }),
-        (r.prototype.poll = function() {
+        (r.prototype.poll = function () {
           u("polling"), (this.polling = !0), this.doPoll(), this.emit("poll");
         }),
-        (r.prototype.onData = function(t) {
+        (r.prototype.onData = function (t) {
           var e = this;
           u("polling got data %s", t);
-          var n = function(t, n, r) {
+          var n = function (t, n, r) {
             return (
               "opening" === e.readyState && e.onOpen(),
               "close" === t.type ? (e.onClose(), !1) : void e.onPacket(t)
@@ -2307,7 +2304,7 @@
                 ? this.poll()
                 : u('ignoring poll - transport state "%s"', this.readyState));
         }),
-        (r.prototype.doClose = function() {
+        (r.prototype.doClose = function () {
           function t() {
             u("writing close packet"), e.write([{ type: "close" }]);
           }
@@ -2316,17 +2313,17 @@
             ? (u("transport open - closing"), t())
             : (u("transport not open - deferring close"), this.once("open", t));
         }),
-        (r.prototype.write = function(t) {
+        (r.prototype.write = function (t) {
           var e = this;
           this.writable = !1;
-          var n = function() {
+          var n = function () {
             (e.writable = !0), e.emit("drain");
           };
-          s.encodePayload(t, this.supportsBinary, function(t) {
+          s.encodePayload(t, this.supportsBinary, function (t) {
             e.doWrite(t, n);
           });
         }),
-        (r.prototype.uri = function() {
+        (r.prototype.uri = function () {
           var t = this.query || {},
             e = this.secure ? "https" : "http",
             n = "";
@@ -2342,7 +2339,7 @@
           return e + "://" + (r ? "[" + this.hostname + "]" : this.hostname) + n + this.path + t;
         });
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t) {
         (this.path = t.path),
           (this.hostname = t.hostname),
@@ -2372,43 +2369,43 @@
         i = n(11);
       (t.exports = r),
         i(r.prototype),
-        (r.prototype.onError = function(t, e) {
+        (r.prototype.onError = function (t, e) {
           var n = new Error(t);
           return (n.type = "TransportError"), (n.description = e), this.emit("error", n), this;
         }),
-        (r.prototype.open = function() {
+        (r.prototype.open = function () {
           return (
             ("closed" !== this.readyState && "" !== this.readyState) ||
               ((this.readyState = "opening"), this.doOpen()),
             this
           );
         }),
-        (r.prototype.close = function() {
+        (r.prototype.close = function () {
           return (
             ("opening" !== this.readyState && "open" !== this.readyState) ||
               (this.doClose(), this.onClose()),
             this
           );
         }),
-        (r.prototype.send = function(t) {
+        (r.prototype.send = function (t) {
           if ("open" !== this.readyState) throw new Error("Transport not open");
           this.write(t);
         }),
-        (r.prototype.onOpen = function() {
+        (r.prototype.onOpen = function () {
           (this.readyState = "open"), (this.writable = !0), this.emit("open");
         }),
-        (r.prototype.onData = function(t) {
+        (r.prototype.onData = function (t) {
           var e = o.decodePacket(t, this.socket.binaryType);
           this.onPacket(e);
         }),
-        (r.prototype.onPacket = function(t) {
+        (r.prototype.onPacket = function (t) {
           this.emit("packet", t);
         }),
-        (r.prototype.onClose = function() {
+        (r.prototype.onClose = function () {
           (this.readyState = "closed"), this.emit("close");
         });
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t, n) {
         var r = "b" + e.packets[t.type] + t.data.data;
         return n(r);
@@ -2426,7 +2423,7 @@
         if (!n) return e.encodeBase64Packet(t, r);
         var o = new FileReader();
         return (
-          (o.onload = function() {
+          (o.onload = function () {
             e.encodePacket({ type: t.type, data: o.result }, n, !0, r);
           }),
           o.readAsArrayBuffer(t.data)
@@ -2452,8 +2449,8 @@
         for (
           var r = new Array(t.length),
             o = l(t.length, n),
-            i = function(t, n, o) {
-              e(n, function(e, n) {
+            i = function (t, n, o) {
+              e(n, function (e, n) {
                 (r[t] = n), o(e, r);
               });
             },
@@ -2481,12 +2478,12 @@
           pong: 3,
           message: 4,
           upgrade: 5,
-          noop: 6
+          noop: 6,
         }),
         b = p(v),
         C = { type: "error", data: "parser error" },
         w = n(31);
-      (e.encodePacket = function(t, e, n, i) {
+      (e.encodePacket = function (t, e, n, i) {
         "function" == typeof e && ((i = e), (e = !1)),
           "function" == typeof n && ((i = n), (n = null));
         var a = void 0 === t.data ? void 0 : t.data.buffer || t.data;
@@ -2499,12 +2496,12 @@
           i("" + c)
         );
       }),
-        (e.encodeBase64Packet = function(t, n) {
+        (e.encodeBase64Packet = function (t, n) {
           var r = "b" + e.packets[t.type];
           if ("undefined" != typeof w && t.data instanceof w) {
             var o = new FileReader();
             return (
-              (o.onload = function() {
+              (o.onload = function () {
                 var t = o.result.split(",")[1];
                 n(r + t);
               }),
@@ -2521,7 +2518,7 @@
           }
           return (r += btoa(i)), n(r);
         }),
-        (e.decodePacket = function(t, n, r) {
+        (e.decodePacket = function (t, n, r) {
           if (void 0 === t) return C;
           if ("string" == typeof t) {
             if ("b" === t.charAt(0)) return e.decodeBase64Packet(t.substr(1), n);
@@ -2538,18 +2535,18 @@
             s = f(t, 1);
           return w && "blob" === n && (s = new w([s])), { type: b[o], data: s };
         }),
-        (e.decodeBase64Packet = function(t, e) {
+        (e.decodeBase64Packet = function (t, e) {
           var n = b[t.charAt(0)];
           if (!u) return { type: n, data: { base64: !0, data: t.substr(1) } };
           var r = u.decode(t.substr(1));
           return "blob" === e && w && (r = new w([r])), { type: n, data: r };
         }),
-        (e.encodePayload = function(t, n, r) {
+        (e.encodePayload = function (t, n, r) {
           function o(t) {
             return t.length + ":" + t;
           }
           function i(t, r) {
-            e.encodePacket(t, !!s && n, !1, function(t) {
+            e.encodePacket(t, !!s && n, !1, function (t) {
               r(null, o(t));
             });
           }
@@ -2560,12 +2557,12 @@
               ? e.encodePayloadAsBlob(t, r)
               : e.encodePayloadAsArrayBuffer(t, r)
             : t.length
-            ? void c(t, i, function(t, e) {
+            ? void c(t, i, function (t, e) {
                 return r(e.join(""));
               })
             : r("0:");
         }),
-        (e.decodePayload = function(t, n, r) {
+        (e.decodePayload = function (t, n, r) {
           if ("string" != typeof t) return e.decodePayloadAsBinary(t, n, r);
           "function" == typeof n && ((r = n), (n = null));
           var o;
@@ -2586,15 +2583,15 @@
           }
           return "" !== a ? r(C, 0, 1) : void 0;
         }),
-        (e.encodePayloadAsArrayBuffer = function(t, n) {
+        (e.encodePayloadAsArrayBuffer = function (t, n) {
           function r(t, n) {
-            e.encodePacket(t, !0, !0, function(t) {
+            e.encodePacket(t, !0, !0, function (t) {
               return n(null, t);
             });
           }
           return t.length
-            ? void c(t, r, function(t, e) {
-                var r = e.reduce(function(t, e) {
+            ? void c(t, r, function (t, e) {
+                var r = e.reduce(function (t, e) {
                     var n;
                     return (
                       (n = "string" == typeof e ? e.length : e.byteLength),
@@ -2604,7 +2601,7 @@
                   o = new Uint8Array(r),
                   i = 0;
                 return (
-                  e.forEach(function(t) {
+                  e.forEach(function (t) {
                     var e = "string" == typeof t,
                       n = t;
                     if (e) {
@@ -2623,9 +2620,9 @@
               })
             : n(new ArrayBuffer(0));
         }),
-        (e.encodePayloadAsBlob = function(t, n) {
+        (e.encodePayloadAsBlob = function (t, n) {
           function r(t, n) {
-            e.encodePacket(t, !0, !0, function(t) {
+            e.encodePacket(t, !0, !0, function (t) {
               var e = new Uint8Array(1);
               if (((e[0] = 1), "string" == typeof t)) {
                 for (var r = new Uint8Array(t.length), o = 0; o < t.length; o++)
@@ -2647,11 +2644,11 @@
               }
             });
           }
-          c(t, r, function(t, e) {
+          c(t, r, function (t, e) {
             return n(new w(e));
           });
         }),
-        (e.decodePayloadAsBinary = function(t, n, r) {
+        (e.decodePayloadAsBinary = function (t, n, r) {
           "function" == typeof n && ((r = n), (n = null));
           for (var o = t, i = []; o.byteLength > 0; ) {
             for (var s = new Uint8Array(o), a = 0 === s[0], c = "", u = 1; 255 !== s[u]; u++) {
@@ -2671,22 +2668,22 @@
             i.push(p), (o = f(o, c));
           }
           var d = i.length;
-          i.forEach(function(t, o) {
+          i.forEach(function (t, o) {
             r(e.decodePacket(t, n, !0), o, d);
           });
         });
     },
-    function(t, e) {
+    function (t, e) {
       t.exports =
         Object.keys ||
-        function(t) {
+        function (t) {
           var e = [],
             n = Object.prototype.hasOwnProperty;
           for (var r in t) n.call(t, r) && e.push(r);
           return e;
         };
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t) {
         if (!t || "object" != typeof t) return !1;
         if (o(t)) {
@@ -2715,8 +2712,8 @@
           ("undefined" != typeof File && "[object FileConstructor]" === i.call(File));
       t.exports = r;
     },
-    function(t, e) {
-      t.exports = function(t, e, n) {
+    function (t, e) {
+      t.exports = function (t, e, n) {
         var r = t.byteLength;
         if (((e = e || 0), (n = n || r), t.slice)) return t.slice(e, n);
         if ((e < 0 && (e += r), n < 0 && (n += r), n > r && (n = r), e >= r || e >= n || 0 === r))
@@ -2726,7 +2723,7 @@
         return i.buffer;
       };
     },
-    function(t, e) {
+    function (t, e) {
       function n(t, e, n) {
         function o(t, r) {
           if (o.count <= 0) throw new Error("after called too many times");
@@ -2738,7 +2735,7 @@
       function r() {}
       t.exports = n;
     },
-    function(t, e) {
+    function (t, e) {
       function n(t) {
         for (var e, n, r = [], o = 0, i = t.length; o < i; )
           (e = t.charCodeAt(o++)),
@@ -2834,8 +2831,8 @@
         d = String.fromCharCode;
       t.exports = { version: "2.1.2", encode: a, decode: p };
     },
-    function(t, e) {
-      !(function() {
+    function (t, e) {
+      !(function () {
         "use strict";
         for (
           var t = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
@@ -2845,7 +2842,7 @@
           r++
         )
           n[t.charCodeAt(r)] = r;
-        (e.encode = function(e) {
+        (e.encode = function (e) {
           var n,
             r = new Uint8Array(e),
             o = r.length,
@@ -2862,7 +2859,7 @@
             i
           );
         }),
-          (e.decode = function(t) {
+          (e.decode = function (t) {
             var e,
               r,
               o,
@@ -2886,9 +2883,9 @@
           });
       })();
     },
-    function(t, e) {
+    function (t, e) {
       function n(t) {
-        return t.map(function(t) {
+        return t.map(function (t) {
           if (t.buffer instanceof ArrayBuffer) {
             var e = t.buffer;
             if (t.byteLength !== e.byteLength) {
@@ -2904,7 +2901,7 @@
         e = e || {};
         var r = new i();
         return (
-          n(t).forEach(function(t) {
+          n(t).forEach(function (t) {
             r.append(t);
           }),
           e.type ? r.getBlob(e.type) : r.getBlob()
@@ -2921,7 +2918,7 @@
             : "undefined" != typeof MSBlobBuilder
             ? MSBlobBuilder
             : "undefined" != typeof MozBlobBuilder && MozBlobBuilder,
-        s = (function() {
+        s = (function () {
           try {
             var t = new Blob(["hi"]);
             return 2 === t.size;
@@ -2931,7 +2928,7 @@
         })(),
         a =
           s &&
-          (function() {
+          (function () {
             try {
               var t = new Blob([new Uint8Array([1, 2])]);
               return 2 === t.size;
@@ -2942,19 +2939,19 @@
         c = i && i.prototype.append && i.prototype.getBlob;
       "undefined" != typeof Blob &&
         ((r.prototype = Blob.prototype), (o.prototype = Blob.prototype)),
-        (t.exports = (function() {
+        (t.exports = (function () {
           return s ? (a ? Blob : o) : c ? r : void 0;
         })());
     },
-    function(t, e) {
-      (e.encode = function(t) {
+    function (t, e) {
+      (e.encode = function (t) {
         var e = "";
         for (var n in t)
           t.hasOwnProperty(n) &&
             (e.length && (e += "&"), (e += encodeURIComponent(n) + "=" + encodeURIComponent(t[n])));
         return e;
       }),
-        (e.decode = function(t) {
+        (e.decode = function (t) {
           for (var e = {}, n = t.split("&"), r = 0, o = n.length; r < o; r++) {
             var i = n[r].split("=");
             e[decodeURIComponent(i[0])] = decodeURIComponent(i[1]);
@@ -2962,13 +2959,13 @@
           return e;
         });
     },
-    function(t, e) {
-      t.exports = function(t, e) {
-        var n = function() {};
+    function (t, e) {
+      t.exports = function (t, e) {
+        var n = function () {};
         (n.prototype = e.prototype), (t.prototype = new n()), (t.prototype.constructor = t);
       };
     },
-    function(t, e) {
+    function (t, e) {
       "use strict";
       function n(t) {
         var e = "";
@@ -2998,8 +2995,8 @@
         c[s[p]] = p;
       (o.encode = n), (o.decode = r), (t.exports = o);
     },
-    function(t, e, n) {
-      (function(e) {
+    function (t, e, n) {
+      (function (e) {
         function r() {}
         function o() {
           return "undefined" != typeof self
@@ -3017,14 +3014,14 @@
           }
           this.index = c.length;
           var n = this;
-          c.push(function(t) {
+          c.push(function (t) {
             n.onData(t);
           }),
             (this.query.j = this.index),
             "function" == typeof addEventListener &&
               addEventListener(
                 "beforeunload",
-                function() {
+                function () {
                   n.script && (n.script.onerror = r);
                 },
                 !1
@@ -3038,7 +3035,7 @@
           p = /\\n/g;
         a(i, s),
           (i.prototype.supportsBinary = !1),
-          (i.prototype.doClose = function() {
+          (i.prototype.doClose = function () {
             this.script && (this.script.parentNode.removeChild(this.script), (this.script = null)),
               this.form &&
                 (this.form.parentNode.removeChild(this.form),
@@ -3046,13 +3043,13 @@
                 (this.iframe = null)),
               s.prototype.doClose.call(this);
           }),
-          (i.prototype.doPoll = function() {
+          (i.prototype.doPoll = function () {
             var t = this,
               e = document.createElement("script");
             this.script && (this.script.parentNode.removeChild(this.script), (this.script = null)),
               (e.async = !0),
               (e.src = this.uri()),
-              (e.onerror = function(e) {
+              (e.onerror = function (e) {
                 t.onError("jsonp poll error", e);
               });
             var n = document.getElementsByTagName("script")[0];
@@ -3060,12 +3057,12 @@
               (this.script = e);
             var r = "undefined" != typeof navigator && /gecko/i.test(navigator.userAgent);
             r &&
-              setTimeout(function() {
+              setTimeout(function () {
                 var t = document.createElement("iframe");
                 document.body.appendChild(t), document.body.removeChild(t);
               }, 100);
           }),
-          (i.prototype.doWrite = function(t, e) {
+          (i.prototype.doWrite = function (t, e) {
             function n() {
               r(), e();
             }
@@ -3113,19 +3110,19 @@
               this.form.submit();
             } catch (h) {}
             this.iframe.attachEvent
-              ? (this.iframe.onreadystatechange = function() {
+              ? (this.iframe.onreadystatechange = function () {
                   "complete" === o.iframe.readyState && n();
                 })
               : (this.iframe.onload = n);
           });
       }.call(
         e,
-        (function() {
+        (function () {
           return this;
         })()
       ));
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t) {
         var e = t && t.forceBase64;
         e && (this.supportsBinary = !1),
@@ -3157,7 +3154,7 @@
         u(r, s),
         (r.prototype.name = "websocket"),
         (r.prototype.supportsBinary = !0),
-        (r.prototype.doOpen = function() {
+        (r.prototype.doOpen = function () {
           if (this.check()) {
             var t = this.uri(),
               e = this.protocols,
@@ -3188,33 +3185,33 @@
               this.addEventListeners();
           }
         }),
-        (r.prototype.addEventListeners = function() {
+        (r.prototype.addEventListeners = function () {
           var t = this;
-          (this.ws.onopen = function() {
+          (this.ws.onopen = function () {
             t.onOpen();
           }),
-            (this.ws.onclose = function() {
+            (this.ws.onclose = function () {
               t.onClose();
             }),
-            (this.ws.onmessage = function(e) {
+            (this.ws.onmessage = function (e) {
               t.onData(e.data);
             }),
-            (this.ws.onerror = function(e) {
+            (this.ws.onerror = function (e) {
               t.onError("websocket error", e);
             });
         }),
-        (r.prototype.write = function(t) {
+        (r.prototype.write = function (t) {
           function e() {
             n.emit("flush"),
-              setTimeout(function() {
+              setTimeout(function () {
                 (n.writable = !0), n.emit("drain");
               }, 0);
           }
           var n = this;
           this.writable = !1;
           for (var r = t.length, o = 0, i = r; o < i; o++)
-            !(function(t) {
-              a.encodePacket(t, n.supportsBinary, function(o) {
+            !(function (t) {
+              a.encodePacket(t, n.supportsBinary, function (o) {
                 if (!n.usingBrowserWebSocket) {
                   var i = {};
                   if ((t.options && (i.compress = t.options.compress), n.perMessageDeflate)) {
@@ -3231,13 +3228,13 @@
               });
             })(t[o]);
         }),
-        (r.prototype.onClose = function() {
+        (r.prototype.onClose = function () {
           s.prototype.onClose.call(this);
         }),
-        (r.prototype.doClose = function() {
+        (r.prototype.doClose = function () {
           "undefined" != typeof this.ws && this.ws.close();
         }),
-        (r.prototype.uri = function() {
+        (r.prototype.uri = function () {
           var t = this.query || {},
             e = this.secure ? "wss" : "ws",
             n = "";
@@ -3252,20 +3249,20 @@
           var r = this.hostname.indexOf(":") !== -1;
           return e + "://" + (r ? "[" + this.hostname + "]" : this.hostname) + n + this.path + t;
         }),
-        (r.prototype.check = function() {
+        (r.prototype.check = function () {
           return !(!l || ("__initialize" in l && this.name === r.prototype.name));
         });
     },
-    function(t, e) {},
-    function(t, e) {
+    function (t, e) {},
+    function (t, e) {
       var n = [].indexOf;
-      t.exports = function(t, e) {
+      t.exports = function (t, e) {
         if (n) return t.indexOf(e);
         for (var r = 0; r < t.length; ++r) if (t[r] === e) return r;
         return -1;
       };
     },
-    function(t, e, n) {
+    function (t, e, n) {
       function r(t, e, n) {
         (this.io = t),
           (this.nsp = e),
@@ -3302,21 +3299,21 @@
           reconnect_error: 1,
           reconnecting: 1,
           ping: 1,
-          pong: 1
+          pong: 1,
         },
         l = i.prototype.emit;
       i(r.prototype),
-        (r.prototype.subEvents = function() {
+        (r.prototype.subEvents = function () {
           if (!this.subs) {
             var t = this.io;
             this.subs = [
               a(t, "open", c(this, "onopen")),
               a(t, "packet", c(this, "onpacket")),
-              a(t, "close", c(this, "onclose"))
+              a(t, "close", c(this, "onclose")),
             ];
           }
         }),
-        (r.prototype.open = r.prototype.connect = function() {
+        (r.prototype.open = r.prototype.connect = function () {
           return this.connected
             ? this
             : (this.subEvents(),
@@ -3325,20 +3322,18 @@
               this.emit("connecting"),
               this);
         }),
-        (r.prototype.send = function() {
+        (r.prototype.send = function () {
           var t = s(arguments);
           return t.unshift("message"), this.emit.apply(this, t), this;
         }),
-        (r.prototype.emit = function(t) {
+        (r.prototype.emit = function (t) {
           if (f.hasOwnProperty(t)) return l.apply(this, arguments), this;
           var e = s(arguments),
             n = {
-              type: (void 0 !== this.flags.binary
-              ? this.flags.binary
-              : h(e))
+              type: (void 0 !== this.flags.binary ? this.flags.binary : h(e))
                 ? o.BINARY_EVENT
                 : o.EVENT,
-              data: e
+              data: e,
             };
           return (
             (n.options = {}),
@@ -3352,10 +3347,10 @@
             this
           );
         }),
-        (r.prototype.packet = function(t) {
+        (r.prototype.packet = function (t) {
           (t.nsp = this.nsp), this.io.packet(t);
         }),
-        (r.prototype.onopen = function() {
+        (r.prototype.onopen = function () {
           if ((u("transport is open - connecting"), "/" !== this.nsp))
             if (this.query) {
               var t = "object" == typeof this.query ? p.encode(this.query) : this.query;
@@ -3363,14 +3358,14 @@
                 this.packet({ type: o.CONNECT, query: t });
             } else this.packet({ type: o.CONNECT });
         }),
-        (r.prototype.onclose = function(t) {
+        (r.prototype.onclose = function (t) {
           u("close (%s)", t),
             (this.connected = !1),
             (this.disconnected = !0),
             delete this.id,
             this.emit("disconnect", t);
         }),
-        (r.prototype.onpacket = function(t) {
+        (r.prototype.onpacket = function (t) {
           var e = t.nsp === this.nsp,
             n = t.type === o.ERROR && "/" === t.nsp;
           if (e || n)
@@ -3397,16 +3392,16 @@
                 this.emit("error", t.data);
             }
         }),
-        (r.prototype.onevent = function(t) {
+        (r.prototype.onevent = function (t) {
           var e = t.data || [];
           u("emitting event %j", e),
             null != t.id && (u("attaching ack callback to event"), e.push(this.ack(t.id))),
             this.connected ? l.apply(this, e) : this.receiveBuffer.push(e);
         }),
-        (r.prototype.ack = function(t) {
+        (r.prototype.ack = function (t) {
           var e = this,
             n = !1;
-          return function() {
+          return function () {
             if (!n) {
               n = !0;
               var r = s(arguments);
@@ -3415,7 +3410,7 @@
             }
           };
         }),
-        (r.prototype.onack = function(t) {
+        (r.prototype.onack = function (t) {
           var e = this.acks[t.id];
           "function" == typeof e
             ? (u("calling ack %s with %j", t.id, t.data),
@@ -3423,32 +3418,32 @@
               delete this.acks[t.id])
             : u("bad ack %s", t.id);
         }),
-        (r.prototype.onconnect = function() {
+        (r.prototype.onconnect = function () {
           (this.connected = !0),
             (this.disconnected = !1),
             this.emit("connect"),
             this.emitBuffered();
         }),
-        (r.prototype.emitBuffered = function() {
+        (r.prototype.emitBuffered = function () {
           var t;
           for (t = 0; t < this.receiveBuffer.length; t++) l.apply(this, this.receiveBuffer[t]);
           for (this.receiveBuffer = [], t = 0; t < this.sendBuffer.length; t++)
             this.packet(this.sendBuffer[t]);
           this.sendBuffer = [];
         }),
-        (r.prototype.ondisconnect = function() {
+        (r.prototype.ondisconnect = function () {
           u("server disconnect (%s)", this.nsp),
             this.destroy(),
             this.onclose("io server disconnect");
         }),
-        (r.prototype.destroy = function() {
+        (r.prototype.destroy = function () {
           if (this.subs) {
             for (var t = 0; t < this.subs.length; t++) this.subs[t].destroy();
             this.subs = null;
           }
           this.io.destroy(this);
         }),
-        (r.prototype.close = r.prototype.disconnect = function() {
+        (r.prototype.close = r.prototype.disconnect = function () {
           return (
             this.connected &&
               (u("performing disconnect (%s)", this.nsp), this.packet({ type: o.DISCONNECT })),
@@ -3457,14 +3452,14 @@
             this
           );
         }),
-        (r.prototype.compress = function(t) {
+        (r.prototype.compress = function (t) {
           return (this.flags.compress = t), this;
         }),
-        (r.prototype.binary = function(t) {
+        (r.prototype.binary = function (t) {
           return (this.flags.binary = t), this;
         });
     },
-    function(t, e) {
+    function (t, e) {
       function n(t, e) {
         var n = [];
         e = e || 0;
@@ -3473,31 +3468,31 @@
       }
       t.exports = n;
     },
-    function(t, e) {
+    function (t, e) {
       function n(t, e, n) {
         return (
           t.on(e, n),
           {
-            destroy: function() {
+            destroy: function () {
               t.removeListener(e, n);
-            }
+            },
           }
         );
       }
       t.exports = n;
     },
-    function(t, e) {
+    function (t, e) {
       var n = [].slice;
-      t.exports = function(t, e) {
+      t.exports = function (t, e) {
         if (("string" == typeof e && (e = t[e]), "function" != typeof e))
           throw new Error("bind() requires a function");
         var r = n.call(arguments, 2);
-        return function() {
+        return function () {
           return e.apply(t, r.concat(n.call(arguments)));
         };
       };
     },
-    function(t, e) {
+    function (t, e) {
       function n(t) {
         (t = t || {}),
           (this.ms = t.min || 100),
@@ -3507,7 +3502,7 @@
           (this.attempts = 0);
       }
       (t.exports = n),
-        (n.prototype.duration = function() {
+        (n.prototype.duration = function () {
           var t = this.ms * Math.pow(this.factor, this.attempts++);
           if (this.jitter) {
             var e = Math.random(),
@@ -3516,19 +3511,19 @@
           }
           return 0 | Math.min(t, this.max);
         }),
-        (n.prototype.reset = function() {
+        (n.prototype.reset = function () {
           this.attempts = 0;
         }),
-        (n.prototype.setMin = function(t) {
+        (n.prototype.setMin = function (t) {
           this.ms = t;
         }),
-        (n.prototype.setMax = function(t) {
+        (n.prototype.setMax = function (t) {
           this.max = t;
         }),
-        (n.prototype.setJitter = function(t) {
+        (n.prototype.setJitter = function (t) {
           this.jitter = t;
         });
-    }
+    },
   ]);
 });
 //# sourceMappingURL=socket.io.js.map

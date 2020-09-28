@@ -10,7 +10,7 @@ debug.log = console.log.bind(console);
 
 const server = require("http").createServer();
 const io = require("socket.io")(server, {
-  path: "/api"
+  path: "/api",
 });
 var GoogleAuth = require("google_authenticator").authenticator;
 
@@ -28,7 +28,7 @@ function getPadInfo(slug) {
       language: "javascript",
       isUnloaded: false,
       lastAccess: Date.now(),
-      data: ""
+      data: "",
     };
     debug(`New pad created: /${slug}`);
 
@@ -41,7 +41,7 @@ function getPadInfo(slug) {
   return {
     isNewPad: isNewPad,
     isPasswordProtected: pads[slug].type === "password",
-    pad: pads[slug]
+    pad: pads[slug],
   };
 }
 
@@ -66,17 +66,17 @@ server.listen(port, () => debug(`Server listening on port ${port}!`));
 
 // A namespace called "info", independent from the
 // original default "/" namespace
-io.of("padCount").on("connection", socket => {
+io.of("padCount").on("connection", (socket) => {
   socket.emit("padCountUpdate", Object.keys(pads).length);
 });
 
-io.of("padList").on("connection", socket => {
+io.of("padList").on("connection", (socket) => {
   let padList = [];
   for (let slug in pads) {
     let pad = pads[slug];
     padList.push({
       slug: `/${slug}`,
-      isPasswordProtected: pad.type === "password"
+      isPasswordProtected: pad.type === "password",
     });
   }
 
@@ -93,7 +93,7 @@ padsNamespace.use((socket, next) => {
 });
 
 // Default "/" namespace
-padsNamespace.on("connection", async socket => {
+padsNamespace.on("connection", async (socket) => {
   let slug = socket.handshake.query.slug;
   let { isNewPad, isPasswordProtected, pad } = getPadInfo(slug);
 
@@ -105,7 +105,7 @@ padsNamespace.on("connection", async socket => {
       enableAdminTools: isNewPad,
       isPasswordProtected: false,
       language: pad.language,
-      data: await getPadData(slug)
+      data: await getPadData(slug),
     };
     joinRoom();
   }
@@ -114,17 +114,17 @@ padsNamespace.on("connection", async socket => {
 
   if (isNewPad) allowPasswordSetOperations();
 
-  socket.on("password", async password => {
+  socket.on("password", async (password) => {
     let isAdminPassword = googleAuth.verifyCode(config.adminSecret, password);
     let response = {
       // Allow access if password is correct or is admin password
-      isPasswordCorrect: pad.password === password || isAdminPassword
+      isPasswordCorrect: pad.password === password || isAdminPassword,
     };
     if (response.isPasswordCorrect) {
       response = {
         ...response,
         language: pad.language,
-        data: await getPadData(slug)
+        data: await getPadData(slug),
       };
       if (isAdminPassword) {
         response = { ...response, enableAdminTools: true };
@@ -145,7 +145,7 @@ padsNamespace.on("connection", async socket => {
       pad.lastAccess = Date.now();
     });
 
-    socket.on("setLanguage", newLanguage => {
+    socket.on("setLanguage", (newLanguage) => {
       // TODO: check if language is correct here.
       pad.language = newLanguage;
       socket.to(slug).emit("setLanguage", newLanguage);
@@ -153,7 +153,7 @@ padsNamespace.on("connection", async socket => {
   }
 
   function allowPasswordSetOperations() {
-    socket.on("setPassword", password => {
+    socket.on("setPassword", (password) => {
       if (!password.trim()) return;
 
       pad.type = "password";

@@ -65,9 +65,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-dismiss="modal">
-              Ok
-            </button>
+            <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
           </div>
         </div>
       </div>
@@ -80,10 +78,10 @@ import { mapState, mapMutations } from "vuex";
 import availableLanguages from "@/modeList.json";
 
 export default {
-  data: function() {
+  data: function () {
     return {
       languages: availableLanguages,
-      selectedLanguage: "javascript"
+      selectedLanguage: "javascript",
     };
   },
   computed: {
@@ -91,15 +89,15 @@ export default {
     ...mapState([
       "showOptions", // Now available through this.showOptions
       "showAdminTools",
-      "options"
+      "options",
     ]),
 
-    optionsButtonStyle: function() {
+    optionsButtonStyle: function () {
       return {
         opacity: this.showOptions ? 1 : 0,
-        cursor: this.showOptions ? "pointer" : "default"
+        cursor: this.showOptions ? "pointer" : "default",
       };
-    }
+    },
   },
   methods: {
     ...mapMutations(["setOption"]),
@@ -107,20 +105,20 @@ export default {
     onSubmit() {
       let password = this.$refs.password.value;
       if (password.trim()) this.setOption({ password: password });
-    }
+    },
   },
   watch: {
-    selectedLanguage: function(newSelectedLanguage) {
+    selectedLanguage: function (newSelectedLanguage) {
       // Language validity check
       if (availableLanguages.includes(newSelectedLanguage))
         this.setOption({ language: newSelectedLanguage });
     },
 
-    "options.language": function(newLanguage) {
+    "options.language": function (newLanguage) {
       this.selectedLanguage = newLanguage;
-    }
+    },
   },
-  mounted() {}
+  mounted() {},
 };
 </script>
 

@@ -9,5 +9,5 @@
   unloadDelay: 10,
 
   // A private key use to check Google Authenticator token
-  adminSecret: "3UKJHAOWDTT6OJRC"
+  adminSecret: "RMUEHNKZFQZF5VMN"
 }

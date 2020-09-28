@@ -24,22 +24,22 @@ export default {
   props: {
     code: String,
     lastDelta: Object,
-    language: String
+    language: String,
   },
-  data: function() {
+  data: function () {
     return {
       editor: null,
-      ignoreDelta: false
+      ignoreDelta: false,
     };
   },
   methods: {
     // Include mutations from Vuex store
     ...mapMutations([
-      "showOptions" // Now available through this.showOptions(bool)
-    ])
+      "showOptions", // Now available through this.showOptions(bool)
+    ]),
   },
   watch: {
-    code: function(newValue /*, oldValue*/) {
+    code: function (newValue /*, oldValue*/) {
       // The following works because Ace processes events synchronously.
       // This is the only way to do it as Ace does not have a "silent" option for setValue.
       this.ignoreDelta = true;
@@ -48,17 +48,14 @@ export default {
 
       this.editor.focus();
     },
-    lastDelta: function(newDelta) {
+    lastDelta: function (newDelta) {
       if (newDelta) {
-        this.editor
-          .getSession()
-          .getDocument()
-          .applyDelta(newDelta);
+        this.editor.getSession().getDocument().applyDelta(newDelta);
       }
     },
-    language: function(newLanguage) {
+    language: function (newLanguage) {
       this.editor.session.setMode(`ace/mode/${newLanguage}`);
-    }
+    },
   },
   mounted() {
     const CDN = "https://cdn.jsdelivr.net/npm/ace-builds@1.4.8/src-min-noconflict";
@@ -76,7 +73,7 @@ export default {
 
     this.editor.setValue(this.code, -1);
 
-    this.editor.on("change", delta => {
+    this.editor.on("change", (delta) => {
       if (!this.ignoreDelta) this.$emit("onInput", delta, this.editor.getValue());
     });
 
@@ -86,7 +83,7 @@ export default {
   },
   beforeDestroy() {
     this.showOptions(false);
-  }
+  },
 };
 </script>
 

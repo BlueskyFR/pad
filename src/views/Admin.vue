@@ -9,6 +9,6 @@ export default {
   name: "admin",
   components: {
     //HomePage
-  }
+  },
 };
 </script>

@@ -17,14 +17,14 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
-      padList: []
+      padList: [],
     };
   },
   mounted() {
     let socket = io((this.$devMode ? "localhost:8888" : "") + "/padList", { path: "/api" });
-    socket.on("padList", padList => (this.padList = padList));
+    socket.on("padList", (padList) => (this.padList = padList));
   },
   // Triggered after a virtual DOM re-render
   updated() {
@@ -33,7 +33,7 @@ export default {
     //:data-placement="pad.isPasswordProtected ? 'bottom' : false"
     //$('"[data-toggle="tooltip"]"').tooltip();
   },
-  beforeDestroy() {}
+  beforeDestroy() {},
 };
 </script>
 

@@ -22,7 +22,7 @@ export default {
     //HomePage
   },
   methods: {
-    focusTextbox: function() {
+    focusTextbox: function () {
       let tb = $("#pad-slug");
       tb.focus();
 
@@ -45,7 +45,7 @@ export default {
         "baleineaquatique17",
         "no-inspiration",
         "avionetoile568",
-        "foodhouse356"
+        "foodhouse356",
       ];
       const word = words[Math.floor(Math.random() * words.length)];
       const delay = 100; // in ms
@@ -56,8 +56,8 @@ export default {
         }, i * delay);
       }
       setTimeout(() => tb.select(), word.length * delay);
-    }
-  }
+    },
+  },
 };
 </script>
 

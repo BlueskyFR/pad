@@ -16,14 +16,10 @@
             placeholder="This is a secret!"
           />
           <div class="input-group-append">
-            <button class="btn btn-accent my-2 my-sm-0" type="submit">
-              Valider
-            </button>
+            <button class="btn btn-accent my-2 my-sm-0" type="submit">Valider</button>
           </div>
         </div>
-        <div class="invalid-feedback">
-          Mot de passe incorrect.
-        </div>
+        <div class="invalid-feedback">Mot de passe incorrect.</div>
       </div>
     </form>
   </div>
@@ -33,12 +29,12 @@
 export default {
   name: "Editor",
   props: {
-    code: String
+    code: String,
   },
-  data: function() {
+  data: function () {
     return {
       editor: null,
-      showWarning: false
+      showWarning: false,
     };
   },
   methods: {
@@ -50,16 +46,16 @@ export default {
       this.$refs.input.value = "";
       this.showWarning = true;
       this.$refs.input.focus();
-    }
+    },
   },
   watch: {
-    code: function(newValue /*, oldValue*/) {
+    code: function (newValue /*, oldValue*/) {
       this.editor.setValue(newValue, -1);
-    }
+    },
   },
   async mounted() {
     this.$refs.input.focus();
-  }
+  },
 };
 </script>
 

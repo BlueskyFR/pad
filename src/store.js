@@ -10,8 +10,8 @@ export default new Vuex.Store({
     isPasswordProtected: false,
     options: {
       language: "javascript",
-      password: ""
-    }
+      password: "",
+    },
   },
   mutations: {
     showOptions(state, value) {
@@ -26,7 +26,7 @@ export default new Vuex.Store({
     setOption(state, { language, password }) {
       if (language) state.options.language = language;
       if (password) state.options.password = password;
-    }
+    },
   },
-  actions: {}
+  actions: {},
 });

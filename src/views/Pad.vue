@@ -29,28 +29,28 @@ export default {
   props: {
     //slug: String
   },
-  data: function() {
+  data: function () {
     return {
       askForPassword: false,
       socket: null,
       lastDelta: null,
       code: "",
-      distantLanguage: "javascript" // Store the distant language to avoid sending it again
+      distantLanguage: "javascript", // Store the distant language to avoid sending it again
     };
   },
   computed: {
-    ...mapState(["options", "showAdminTools"])
+    ...mapState(["options", "showAdminTools"]),
   },
   methods: {
     ...mapMutations({
       setAdminToolsEnabled: "showAdminTools",
-      setOption: "setOption"
+      setOption: "setOption",
     }),
 
-    onEditorReady: function(editor) {
+    onEditorReady: function (editor) {
       console.log("Editor ready!");
     },
-    onInput: function(delta, fulltext) {
+    onInput: function (delta, fulltext) {
       // the delta (a modification) has to be sent and then applied to all
       // the other clients in order for them to get the same document.
       // A check is made directly in the Editor component to avoid sending
@@ -59,7 +59,7 @@ export default {
         this.socket.emit("update", delta, fulltext);
       }
     },
-    onPassword: function(password) {
+    onPassword: function (password) {
       if (password.trim()) this.socket.emit("password", password);
     },
 
@@ -67,11 +67,11 @@ export default {
       this.socket = io((this.$devMode ? "localhost:8888" : "") + "/pads", {
         path: "/api",
         query: {
-          slug: this.$route.params.slug
-        }
+          slug: this.$route.params.slug,
+        },
       });
 
-      this.socket.on("init", pad => {
+      this.socket.on("init", (pad) => {
         if (pad.isPasswordProtected) this.askForPassword = true;
         else {
           this.code = pad.data;
@@ -81,7 +81,7 @@ export default {
         this.setAdminToolsEnabled(pad.enableAdminTools === true); // Convert potential undefined to false
       });
 
-      this.socket.on("password", response => {
+      this.socket.on("password", (response) => {
         if (response.isPasswordCorrect) {
           this.askForPassword = false;
           this.code = response.data;
@@ -92,7 +92,7 @@ export default {
         } else this.$refs.password.warnInvalidPassword();
       });
 
-      this.socket.on("update", delta => {
+      this.socket.on("update", (delta) => {
         this.lastDelta = delta;
       });
 
@@ -108,22 +108,22 @@ export default {
         this.distantLanguage = language;
         this.setOption({ language: language });
       }
-    }
+    },
   },
   components: {
     Editor,
-    Password
+    Password,
   },
   mounted() {
     // TODO: check if the password view has to be shown first
     this.openSocketConnection();
   },
   watch: {
-    "options.language": function(newLanguage) {
+    "options.language": function (newLanguage) {
       if (newLanguage !== this.distantLanguage) this.socket.emit("setLanguage", newLanguage);
     },
 
-    "options.password": function(newPassword) {
+    "options.password": function (newPassword) {
       if (newPassword && this.showAdminTools && this.socket != null) {
         this.socket.emit("setPassword", newPassword);
       }
@@ -137,8 +137,8 @@ export default {
       this.code = "";
       this.lastDelta = null;
       this.openSocketConnection();
-    }
-  }
+    },
+  },
 };
 </script>
 

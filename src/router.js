@@ -11,17 +11,17 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Home,
     },
     {
       path: "/admin",
       name: "admin",
-      component: () => import(/* webpackChunkName: "admin" */ "./views/Admin.vue")
+      component: () => import(/* webpackChunkName: "admin" */ "./views/Admin.vue"),
     },
     {
       path: "/list",
       name: "list",
-      component: () => import(/* webpackChunkName: "pad-list" */ "./views/PadList.vue")
+      component: () => import(/* webpackChunkName: "pad-list" */ "./views/PadList.vue"),
     },
     {
       path: "/:slug",
@@ -29,7 +29,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "pad" */ "./views/Pad.vue")
-    }
-  ]
+      component: () => import(/* webpackChunkName: "pad" */ "./views/Pad.vue"),
+    },
+  ],
 });
