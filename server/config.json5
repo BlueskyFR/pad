@@ -1,7 +1,13 @@
 {
-  mongoUrl: "mongodb://localhost:27017",
-  dbName: "pad",
-  collectionName: "pads",
+  // The port the server will listen to
+  port: 8888,
+
+  // MongoDB settings
+  mongodb: {
+    url: "mongodb://localhost:27017",
+    dbName: "pad",
+    collectionName: "pads",
+  },
 
   saveInterval: 10, // In minutes
 
@@ -9,5 +15,5 @@
   unloadDelay: 10,
 
   // A private key use to check Google Authenticator token
-  adminSecret: "RMUEHNKZFQZF5VMN"
+  adminSecret: "RMUEHNKZFQZF5VMN",
 }

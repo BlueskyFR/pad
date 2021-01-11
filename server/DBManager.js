@@ -22,7 +22,7 @@ module.exports = class DBManager {
   }
 
   async _initDBConnection() {
-    this.client = new MongoClient(config.mongoUrl, {
+    this.client = new MongoClient(config.mongodb.url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -34,9 +34,9 @@ module.exports = class DBManager {
       debug(`Connection to the database failed! Error: ${err.stack}`);
     }
 
-    // client.db(config.dbName) is our DB.
-    // .collection(config.collectionName) is our collection INSIDE the DB.
-    this.db = this.client.db(config.dbName).collection(config.collectionName);
+    // client.db(config.mongo.dbName) is our DB.
+    // .collection(config.mongo.collectionName) is our collection INSIDE the DB.
+    this.db = this.client.db(config.mongo.dbName).collection(config.mongo.collectionName);
 
     debug("Successfully connected to the database.");
   }

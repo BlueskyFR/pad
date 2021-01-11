@@ -60,9 +60,7 @@ async function getPadData(slug) {
 const DBManager = require("./DBManager.js");
 let dbManager = new DBManager(pads);
 
-const port = 8888;
-
-server.listen(port, () => debug(`Server listening on port ${port}!`));
+server.listen(config.port, () => debug(`Server listening on port ${config.port}!`));
 
 // A namespace called "info", independent from the
 // original default "/" namespace
