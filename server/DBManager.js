@@ -34,9 +34,9 @@ module.exports = class DBManager {
       debug(`Connection to the database failed! Error: ${err.stack}`);
     }
 
-    // client.db(config.mongo.dbName) is our DB.
-    // .collection(config.mongo.collectionName) is our collection INSIDE the DB.
-    this.db = this.client.db(config.mongo.dbName).collection(config.mongo.collectionName);
+    // client.db(config.mongodb.dbName) is our DB.
+    // .collection(config.mongodb.collectionName) is our collection INSIDE the DB.
+    this.db = this.client.db(config.mongodb.dbName).collection(config.mongodb.collectionName);
 
     debug("Successfully connected to the database.");
   }
