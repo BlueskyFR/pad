@@ -1,6 +1,6 @@
-# Pad :watermelon:
+<p align="center"><a href="https://pad.blueskyfr.space" target="_blank"><img width="150" src=".images/pad-logo.png" alt="Pad logo" /></a></p>
 
-The source code behind [pad.blueskyfr.space](https://pad.blueskyfr.space)!
+:watermelon: The source code behind [pad.blueskyfr.space](https://pad.blueskyfr.space)!
 
 This repository contains the front-end code, written with Vue.js, and the server code in the `server/` directory, running on Node.js.
 
